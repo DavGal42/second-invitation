@@ -1,0 +1,470 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "CosiArm";
+  src: url("/fonts/CosiArm/CosiArm.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bokonique";
+  src: url("/fonts/Bokonique/Bokonique-Light.otf") format("opentype");
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bokonique";
+  src: url("/fonts/Bokonique/Bokonique-Regular.otf") format("opentype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bokonique";
+  src: url("/fonts/Bokonique/Bokonique-Bold.otf") format("opentype");
+  font-style: normal;
+  font-weight: 700 900;
+  font-display: swap;
+}
+
+:root {
+  --ink: #101010;
+  --paper: #ffffff;
+  --canvas: #f2f2f0;
+  --line: #d9d9d5;
+  --soft: #f7f7f4;
+  --section-pad: clamp(26px, 8vw, 48px);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--canvas);
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: var(--canvas);
+  color: var(--ink);
+  font-family: "Bokonique", "Noto Sans Armenian", "Segoe UI", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.invitation-shell {
+  position: relative;
+  width: min(100%, 430px);
+  min-height: 100vh;
+  margin: 0 auto;
+  overflow: clip;
+  background: var(--paper);
+  box-shadow: 0 0 42px rgb(0 0 0 / 6%);
+}
+
+.section-pad {
+  padding-inline: var(--section-pad);
+}
+
+.hero {
+  padding-top: 48px;
+}
+
+.hero-copy {
+  position: sticky;
+  z-index: 0;
+  top: 0;
+  background: var(--paper);
+  animation: hero-intro 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.eyebrow {
+  margin: 0 0 38px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 650;
+  letter-spacing: 0.28em;
+}
+
+.couple-names,
+.venue-title,
+.closing p {
+  font-family: "CosiArm", "Noto Serif Armenian", Sylfaen, Georgia, serif;
+  font-weight: 400;
+}
+
+.couple-names {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 0 38px;
+  text-align: center;
+  font-family: "CosiArm", "Noto Serif Armenian", Sylfaen, serif;
+  font-size: clamp(20px, 12vw, 50px);
+  font-weight: 400;
+  line-height: 0.98;
+  letter-spacing: 0.01em;
+}
+
+.couple-names span {
+  margin-block: 7px;
+  font-family: inherit;
+  font-size: 0.62em;
+}
+
+.image-slot {
+  position: relative;
+  background:
+    linear-gradient(135deg, rgb(0 0 0 / 1.2%) 25%, transparent 25%) 0 0 / 16px 16px,
+    linear-gradient(315deg, rgb(0 0 0 / 1.2%) 25%, transparent 25%) 0 0 / 16px 16px,
+    var(--soft);
+  border: 1px solid #eeeeea;
+}
+
+.hero-image-slot {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: clamp(430px, 130vw, 570px);
+  margin: 0;
+  border: 0;
+  border-radius: 50% 50% 0 0 / 130px 130px 0 0;
+  background: var(--paper);
+  clip-path: inset(0 round 50% 50% 0 0 / 130px 130px 0 0);
+  object-fit: cover;
+}
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 850ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 850ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 {
+  transition-delay: 90ms;
+}
+
+.reveal-delay-2 {
+  transition-delay: 180ms;
+}
+
+.reveal-delay-3 {
+  transition-delay: 270ms;
+}
+
+.reveal-delay-4 {
+  transition-delay: 360ms;
+}
+
+@keyframes hero-intro {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.welcome {
+  padding-top: 55px;
+  padding-bottom: 60px;
+  text-align: center;
+}
+
+.welcome-title {
+  margin: 0 0 12px;
+  font-size: 24px;
+  font-weight: 650;
+  letter-spacing: 0.02em;
+}
+
+.welcome-copy {
+  max-width: 320px;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.42;
+}
+
+.event-date {
+  margin: 24px 0 30px;
+  font-family: "Bokonique", "Noto Sans Armenian", sans-serif;
+  font-size: clamp(48px, 15vw, 68px);
+  font-style: italic;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+
+.countdown-label {
+  margin: 0 0 18px;
+  font-size: 14px;
+  font-weight: 650;
+  letter-spacing: 0.12em;
+}
+
+.countdown {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 330px;
+  margin: 0 auto;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.countdown-cell {
+  position: relative;
+  display: grid;
+  gap: 4px;
+  padding: 13px 4px 12px;
+}
+
+.countdown-cell:not(:last-child)::after {
+  position: absolute;
+  top: 18%;
+  right: 0;
+  height: 64%;
+  border-right: 1px solid var(--line);
+  content: "";
+}
+
+.countdown-cell strong {
+  font-size: 21px;
+  font-variant-numeric: tabular-nums;
+}
+
+.countdown-cell span {
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.venue {
+  border-top: 1px solid #f0f0ed;
+  text-align: center;
+}
+
+.venue-title {
+  max-width: 390px;
+  margin: 0 auto;
+  padding: 50px 24px 22px;
+  text-align: center;
+  font-size: clamp(10px, 7.5vw, 25px);
+  line-height: 1.1;
+  letter-spacing: 0.03em;
+}
+
+.venue-image-slot {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 0;
+}
+
+.venue-copy {
+  padding-top: 20px;
+  padding-bottom: 26px;
+}
+
+.venue-name {
+  margin: 0;
+  font-size: 16px;
+  letter-spacing: 0.02em;
+}
+
+.venue-time {
+  display: block;
+  margin-top: 8px;
+  font-size: 16px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.directions-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  min-height: 46px;
+  margin-top: 15px;
+  padding: 0 23px;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  background: var(--ink);
+  color: white;
+  cursor: pointer;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  transition: transform 180ms ease, background-color 180ms ease, color 180ms ease;
+}
+
+.directions-button:hover {
+  transform: translateY(-2px);
+}
+
+.directions-button:focus-visible,
+.music-control:focus-visible,
+.map-link:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 4px;
+}
+
+.button-arrow {
+  width: 7px;
+  height: 7px;
+  border-right: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  transform: rotate(45deg) translateY(-2px);
+  transition: transform 300ms ease;
+}
+
+.directions-button[aria-expanded="true"] .button-arrow {
+  transform: rotate(225deg) translate(-1px, -1px);
+}
+
+.map-reveal {
+  display: grid;
+  grid-template-rows: 0fr;
+  background: var(--soft);
+  opacity: 0;
+  transition: grid-template-rows 600ms cubic-bezier(0.22, 1, 0.36, 1), opacity 350ms ease;
+}
+
+.map-reveal.is-open {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.map-reveal-inner {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.map-reveal iframe {
+  display: block;
+  width: calc(100% - 32px);
+  height: 310px;
+  margin: 0 16px;
+  border: 0;
+  border-radius: 26px;
+  filter: grayscale(1) contrast(0.94);
+}
+
+.map-link {
+  display: inline-block;
+  margin: 16px 0 24px;
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 650;
+  text-underline-offset: 4px;
+}
+
+.closing {
+  padding-top: 58px;
+  padding-bottom: 72px;
+  text-align: center;
+}
+
+.closing p {
+  margin: 0 auto;
+  max-width: 345px;
+  text-align: center;
+  font-size: clamp(10px, 7.5vw, 25px);
+  line-height: 1.28;
+}
+
+.closing-mark {
+  display: inline-block;
+  margin-top: 38px;
+  padding-top: 14px;
+  border-top: 1px solid var(--ink);
+  font-family: "Bokonique", "Noto Sans Armenian", sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.22em;
+}
+
+.music-control {
+  position: fixed;
+  z-index: 20;
+  top: 18px;
+  right: max(18px, calc((100vw - 430px) / 2 + 18px));
+  display: grid;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  place-items: center;
+  border: 1px solid rgb(255 255 255 / 75%);
+  border-radius: 999px;
+  background: rgb(17 17 17 / 88%);
+  box-shadow: 0 8px 25px rgb(0 0 0 / 15%);
+  color: white;
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+}
+
+.music-control > span:first-child {
+  font-family: Georgia, serif;
+  font-size: 19px;
+}
+
+.music-control.is-playing > span:first-child {
+  animation: music-pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes music-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+@media (max-width: 360px) {
+  .countdown-cell strong {
+    font-size: 18px;
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+}
