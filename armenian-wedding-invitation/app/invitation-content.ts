@@ -40,5 +40,5 @@ export const invitationContent = {
         "https://www.google.com/maps/place/Tigran+Mets/@40.781051,43.852319,693m/data=!3m1!1e3!4m9!3m8!1s0x4041fb86ed155897:0x77257bb0ca2fd7b5!5m2!4m1!1i2!8m2!3d40.7803028!4d43.8542036!16s%2Fg%2F119tlhtmq?entry=ttu&g_ep=EgoyMDI2MDcwOC4wIKXMDSoASAFQAw%3D%3D",
     },
   ],
-  closing: "ՁԵՐ ՆԵՐԿԱՅՈՒԹՅՈՒՆԸ ԿԴԱՐՁՆԻ ՄԵՐ ՕՐԸ ԱՎԵԼԻ ՀԱՏՈՒԿ",
+  closing: "ՁԵՐ ՆԵՐԿԱՅՈՒԹՅՈՒՆԸ ԿԱՐԵՎՈՐ Է ՄԵԶ ՀԱՄԱՐ",
 } as const;
