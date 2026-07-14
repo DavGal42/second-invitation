@@ -21,7 +21,7 @@ export const invitationContent = {
       id: "ceremony",
       heading: "ՊՍԱԿԱԴՐՈՒԹՅՈՒՆ",
       name: "Սուրբ Յոթ Վերք եկեղեցի",
-      time: "16:00",
+      time: "15:30",
       image: "/images/church.png",
       mapEmbedUrl:
         "https://www.google.com/maps?q=40.7861976,43.8423039&z=17&output=embed",
